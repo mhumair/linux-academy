@@ -1,0 +1,2 @@
+# linux-academy
+The Linux Academy Program is a six week long training program conducted on premise at Gaditek by senior Gaditians with years of experience in Linux, cloud computing and cloud engineering.  Once inducted into the program, you will be taught the ins-and-outs of cloud computing and engineering through a combination of theory, on the job and practical hands-on training. It will prepare you for a career in PlatformOps at Gaditek in specific and cloud computing &amp; engineering in general.
