@@ -37,7 +37,7 @@ A Managed Cloud Hosting Platform Where Teams Can Build, Deploy, Scale & Manage S
 Out of the box it provides Application as well as Server-side configuration stacks :
 
 Factors  | Cloud Hosting | Managed Hosting
--------- | --------------| ----------------|
+-------- | --------------| -----------------| ---------------------| ---------------| -------------|
 Managed Amazon Cloud | Managed Google Cloud | Managed DigitalOcean | Managed Linode | Managed Vultr
 
 Applications |
