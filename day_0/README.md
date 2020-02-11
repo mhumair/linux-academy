@@ -24,12 +24,13 @@ Analytics - such as visualizing telemetry and performance data
 ## Cloud Vs Shared Hosting
 ![Cloud vs Shared Hosting](https://www.hostingadvice.com/wp-content/uploads/2017/11/server-comparison.jpg)
 
--|Cloud Hosting | Managed Hosting
+Factors  | Cloud Hosting | Managed Hosting
+-------- | --------------| ----------------|
 Server Resources, Configuration, and Management|Shared | Dedicated
-Scalability|Easily Scale Up or Down | Scaling Requires more time
-Performance|Customized Configurations Leads To Better Performance| Slows down once server is maxed out.
-Security| Managed Partially By Provider | Managed By Client At the Application level
-Cost| Starts from $15 to $20 | Starts from only a few Dolllars
+Scalability | Easily Scale Up or Down | Scaling Requires more time
+Performance | Customized Configurations Leads To Better Performance | Slows down once server is maxed out.
+Security | Managed Partially By Provider | Managed By Client At the Application level
+Cost | Starts from $15 to $20 | Starts from only a few Dolllars
 
 ## Cloudways Managed Services
 A Managed Cloud Hosting Platform Where Teams Can Build, Deploy, Scale & Manage Small to Medium Sized Web Applications. 
