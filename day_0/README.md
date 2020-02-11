@@ -13,12 +13,10 @@ Compute power - such as Linux servers or web applications
 Storage - such as files and databases
 Networking - such as secure connections between the cloud provider and your company
 Analytics - such as visualizing telemetry and performance data
-![Compute Options]
-(https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/media/2-vm-vs-container-vs-serverless.png)
+![Compute Options](https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/media/2-vm-vs-container-vs-serverless.png)
 
 ## Cloud Vs Shared Hosting
-[!Cloud vs Shared Hosting]
-(https://www.hostingadvice.com/wp-content/uploads/2017/11/server-comparison.jpg)
+![Cloud vs Shared Hosting](https://www.hostingadvice.com/wp-content/uploads/2017/11/server-comparison.jpg)
 
 -|Cloud Hosting | Managed Hosting
 Server Resources, Configuration, and Management|Shared | Dedicated
