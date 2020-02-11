@@ -36,11 +36,11 @@ Cost | Starts from $15 to $20 | Starts from only a few Dolllars
 A Managed Cloud Hosting Platform Where Teams Can Build, Deploy, Scale & Manage Small to Medium Sized Web Applications. 
 Out of the box it provides Application as well as Server-side configuration stacks :
 Servers
--------- | --------------| ----------------|
+--------
 Managed Amazon Cloud | Managed Google Cloud | Managed DigitalOcean | Managed Linode | Managed Vultr
 
-Applications
--------- | --------------| ----------------|
+Applications |
+-------- 
 WordPress Hosting | WooCommerce Hosting | Enterprise WordPress Hosting | Magento Hosting | PHP Hosting
 Laravel Hosting | Drupal Hosting | Joomla Hosting | PrestaShop Hosting | Ecommerce Hosting
 
