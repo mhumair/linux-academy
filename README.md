@@ -3,5 +3,7 @@ This repository aims to give an overview of Linux Academy Program. A six week lo
 
 ## Index 
 * Day #01 : [Cloud Concepts In A Nutshell.](https://mhumair.github.io/linux-academy/day_0/)
-* Day #02 : [History Of OpenSource & Linux.](https://github.com/mhumair/linux-academy/tree/master/day_1)
-* Day #03 : [Linux Overview.](https://github.com/mhumair/linux-academy/tree/master/day_2)
+
+* Day #02 : [History Of OpenSource & Linux.](https://mhumair.github.io/linux-academy/day_1/)
+
+* Day #03 : [Linux Overview.](https://mhumair.github.io/linux-academy/day_2/)
