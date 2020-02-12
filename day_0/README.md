@@ -37,11 +37,11 @@ Out of the box it provides Application as well as Server-side configuration stac
 
 Cloud Providers
 | --- | 
-* Managed Amazon Cloud | 
-* Managed Google Cloud | 
-* Managed DigitalOcean | 
-* Managed Linode |
-* Managed Vultr |
+| Managed Amazon Cloud | 
+| Managed Google Cloud | 
+| Managed DigitalOcean | 
+| Managed Linode |
+| Managed Vultr |
 
 | Applications |
 --- | --- | --- | --- | --- |
