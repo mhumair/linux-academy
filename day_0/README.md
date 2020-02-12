@@ -53,7 +53,7 @@ You can login to any shell using ssh on linux in the following way :
 ```console
 humair@ems:~$ sudo ssh yourusername@yourip
 ```
-![ssh](https://drive.google.com/open?id=1vZgOsFANyycIxHv4Fu2Lk4XxYbumBCBc)
+![ssh](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
 ### DDOS
 In computing, a denial-of-service attack is a cyber-attack in which the penetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host connected to the Internet.
 
