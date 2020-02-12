@@ -5,8 +5,6 @@
 * Cloudways Managed Services
 * SSH
 * DDOS
-* Thresholding
-* Bottlenecks
           
 
 ## Cloud Computing 
@@ -62,7 +60,7 @@ Six steps to prevent DDoS attacks :
 * Deploy anti-DDoS hardware and software modules. ...
 * Deploy a DDoS protection appliance. ...
 * Protect your DNS servers.
-## Resources :
+#### Resources :
 * https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/2-what-is-cloud-computing
 * https://www.hostingadvice.com/how-to/cloud-hosting-vs-shared-hosting/
-* Day #03 : Linux Overview.
+* http://cloudways.com/
