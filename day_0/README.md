@@ -47,7 +47,16 @@ Laravel Hosting | Drupal Hosting | Joomla Hosting | PrestaShop Hosting | Ecommer
 
 ### SSH
 
-Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network. Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH
+Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network. Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH. 
+You can login to any shell using ssh on linux in the following way :
+
+```console
+humair@ems:~$ sudo ssh yourusername@yourip
+```
+![ssh](https://drive.google.com/open?id=1vZgOsFANyycIxHv4Fu2Lk4XxYbumBCBc)
+### DDOS
+In computing, a denial-of-service attack is a cyber-attack in which the penetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host connected to the Internet.
+
 ## Resources :
 * https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/2-what-is-cloud-computing
 * https://www.hostingadvice.com/how-to/cloud-hosting-vs-shared-hosting/
