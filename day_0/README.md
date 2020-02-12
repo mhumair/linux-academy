@@ -1,13 +1,12 @@
 # Cloud Concepts In A Nutshell
-## Index :
-* Day #01 : Cloud Computing
-* Day #02 : Cloud Vs Shared Hostingx. 
-* Day #03 : Cloudways Managed Services
-* Day #04 : LINODE VS 
-          : SSH
-          : DDOS
-*         : Thresholding
-          : Bottlenecks
+## Topics :
+* Cloud Computing
+* Cloud Vs Shared Hostingx. 
+* Cloudways Managed Services
+* SSH
+* DDOS
+* Thresholding
+* Bottlenecks
           
 
 ## Cloud Computing 
@@ -41,12 +40,14 @@ Out of the box it provides Application as well as Server-side configuration stac
 --- | --- | --- | --- | --- |
 Managed Amazon Cloud | Managed Google Cloud | Managed DigitalOcean | Managed Linode | Managed Vultr
 
-Applications |
--------- 
+| Applications |
+--- | --- | --- | --- | --- |
 WordPress Hosting | WooCommerce Hosting | Enterprise WordPress Hosting | Magento Hosting | PHP Hosting
 Laravel Hosting | Drupal Hosting | Joomla Hosting | PrestaShop Hosting | Ecommerce Hosting
 
+### SSH
 
+Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network. Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH
 ## Resources :
 * https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/2-what-is-cloud-computing
 * https://www.hostingadvice.com/how-to/cloud-hosting-vs-shared-hosting/
