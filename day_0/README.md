@@ -34,11 +34,14 @@ Cost | Starts from $15 to $20 | Starts from only a few Dolllars
 ## Cloudways Managed Services
 A Managed Cloud Hosting Platform Where Teams Can Build, Deploy, Scale & Manage Small to Medium Sized Web Applications. 
 Out of the box it provides Application as well as Server-side configuration stacks :
-### Servers
 
-1 | 2 | 3 | 4 | 5 |   
---- | --- | --- | --- | --- |
-Managed Amazon Cloud | Managed Google Cloud | Managed DigitalOcean | Managed Linode | Managed Vultr
+Cloud Providers
+| --- | 
+* Managed Amazon Cloud | 
+* Managed Google Cloud | 
+* Managed DigitalOcean | 
+* Managed Linode |
+* Managed Vultr |
 
 | Applications |
 --- | --- | --- | --- | --- |
