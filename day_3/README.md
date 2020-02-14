@@ -28,10 +28,8 @@ humair@ems:~$ sudo useradd -m -d /opt/alice -s /bin/sh joe
 -d : Specifies the login directory by appending the Base directory with the user's name 
 -s : Can be used to change the default login shell.
 
-![users created](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
-![check users](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
-
-## Managing Users in Groups
+![users created](https://i.ibb.co/gVYq3TB/1.png)
+![check users](https://i.ibb.co/R93nVpv/check-users.png)
 
 ### Creating a Secondary Group
 ```console
@@ -53,6 +51,12 @@ humair@ems:~$ chgrp some_file friends
 humair@ems:~$ setfacl -m u:alice:r-- ./some_file
 ```
 For some reason the bits were'nt working here.
+![group created](https://i.ibb.co/9r8jXJg/create-Grou.png)
+![change group ownership](https://i.ibb.co/Yyrw7kh/2.png)
+![change accessibility](https://i.ibb.co/8mcBzpc/acl.png)
+
+
+
 ### /bin/false vs /usr/bin/false
 
 The main diffrence that i found was that `bin/false` is just a binary that dosen't return anything & restricts login while `/nologin` exits gracefully with a message.
@@ -61,6 +65,7 @@ The main diffrence that i found was that `bin/false` is just a binary that dosen
 
 Since I had already used to the `-s` flag while creating the user. I edited the etc/passwd file directly.
 
+![no login shells](https://i.ibb.co/Nx6MgKr/nolgin.png)
 
 ### Restricting Sudo Access
 Edited the sudoers file 
@@ -73,18 +78,18 @@ alice ALL=(root) /sbin/reboot
 humair@ems:~$ deluser alice
 ```
 
-![group created](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
-![change group ownership](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
-
 ### Generating public/private keys using gpg.
 
 ```console
 humair@ems:~$ gpg --full-gen-key
 ```
+![generate key gpg](https://i.ibb.co/84hQ4Wr/gpg-key-gen.png)
+
 ### Encrypting files using gpg
 ```console
 humair@ems:~$ gpg -c ./mangpg
 ```
+![generate key gpg](https://i.ibb.co/84hQ4Wr/gpg-key-gen.png)
 ### Generating public/private ssh key pairs.
 ```console
 humair@ems:~$ gpg -c ./mangpg
@@ -93,55 +98,14 @@ humair@ems:~$ gpg -c ./mangpg
 ```console
 humair@ems:~$ ssh localhost
 ```
+
 The command for connecting to the remote & this server was also fairly the same. However do we need to portforward in order for it to work on different network machines?
+
+![localhost ssh](https://i.ibb.co/L1TVxnS/localhost-ssh.png)
+
 ### Configuring telnet for Remote Access.
 
 ```console
 humair@ems:~$ telnet
 ```
-
-![Cloud vs Shared Hosting](https://www.hostingadvice.com/wp-content/uploads/2017/11/server-comparison.jpg)
-
-Factors  | Cloud Hosting | Managed Hosting
--------- | --------------| ----------------|
-Server Resources, Configuration, and Management|Shared | Dedicated
-Scalability | Easily Scale Up or Down | Scaling Requires more time
-Performance | Customized Configurations Leads To Better Performance | Slows down once server is maxed out.
-Security | Managed Partially By Provider | Managed By Client At the Application level
-Cost | Starts from $15 to $20 | Starts from only a few Dolllars
-
-## Cloudways Managed Services
-A Managed Cloud Hosting Platform Where Teams Can Build, Deploy, Scale & Manage Small to Medium Sized Web Applications. 
-Out of the box it provides Application as well as Server-side configuration stacks :
-
-| Cloud Providers |
---- | --- | --- | --- | --- |
- Managed Amazon Cloud | Managed Google Cloud | Managed DigitalOcean | Managed Linode | Managed Vultr |
-
-| Applications |
---- | --- | --- | --- | --- |
-WordPress Hosting | WooCommerce Hosting | Enterprise WordPress Hosting | Magento Hosting | PHP Hosting
-Laravel Hosting | Drupal Hosting | Joomla Hosting | PrestaShop Hosting | Ecommerce Hosting
-
-### SSH
-
-Secure Shell is a cryptographic network protocol for operating network services securely over an unsecured network. Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH. 
-You can login to any shell using ssh on linux in the following way :
-
-```console
-humair@ems:~$ sudo ssh yourusername@yourip
-```
-![ssh](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
-### DDOS
-In computing, a denial-of-service attack is a cyber-attack in which the penetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host connected to the Internet.
-Six steps to prevent DDoS attacks :
-* Buy more bandwidth. ...
-* Build redundancy into your infrastructure. ...
-* Configure your network hardware against DDoS attacks. ...
-* Deploy anti-DDoS hardware and software modules. ...
-* Deploy a DDoS protection appliance. ...
-* Protect your DNS servers.
-#### Resources :
-* https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/2-what-is-cloud-computing
-* https://www.hostingadvice.com/how-to/cloud-hosting-vs-shared-hosting/
-* http://cloudways.com/
+![localhost telnet](https://i.ibb.co/9GzWvVz/telnet.png)
