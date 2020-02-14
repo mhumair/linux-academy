@@ -1,7 +1,6 @@
 # Managing Users & Remote Desktops Connections
 
 ## Topics :
-* Overview of Groups & File Permissions
 * Creating Users
 * Managing Users in Groups
 * Restricting File Access
@@ -15,19 +14,67 @@
 
   
 
-## Overview of Groups & File Permissions 
+## Creating Users 
+
+```console
+humair@ems:~$ sudo useradd -m -d /opt/joe joe
+```
 
 ```console
 humair@ems:~$ sudo useradd -m -d /opt/alice -s /bin/sh joe
 ```
+
 -m : The -m tag specifies the creation of a home directory if it dosen't exist.
 -d : Specifies the login directory by appending the Base directory with the user's name 
 -s : Can be used to change the default login shell.
 
+![users created](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
+![check users](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
 
-![Compute Options](https://docs.microsoft.com/en-us/learn/modules/principles-cloud-computing/media/2-vm-vs-container-vs-serverless.png)
+## Managing Users in Groups
 
-## Cloud Vs Shared Hosting
+### Creating a Secondary Group
+```console
+humair@ems:~$ sudo groupadd friends; sudo gpasswd -M alice, jhon friends
+```
+-M : Specifes that a list of users are to be added to the group.
+
+### Creating a File
+
+```console
+humair@ems:~$ touch some_file
+```
+### Changing Group OwnerShip
+```console
+humair@ems:~$ chgrp some_file friends
+```
+### Changing Accessiblity 
+```console
+humair@ems:~$ setfacl -m u:alice:r-- ./some_file
+```
+### Changing The Shell 
+
+Since I had already used to the `-s` flag while creating the user. I edited the etc/passwd file directly.
+
+
+### Restricting Sudo Access
+Since I had already used to the `-s` flag while creating the user. I edited the etc/passwd file directly.
+```console
+humair@ems:~$ setfacl -m u:alice:r-- ./some_file
+```
+For some reason the bits were'nt working here.
+
+![group created](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
+![change group ownership](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
+
+### /bin/false vs /usr/bin/false
+
+The main diffrence that i found was that `bin/false` is just a binary that dosen't return anything & restricts login while `/nologin` exits gracefully with a message.
+
+
+### Cloud Vs Shared Hosting
+
+
 ![Cloud vs Shared Hosting](https://www.hostingadvice.com/wp-content/uploads/2017/11/server-comparison.jpg)
 
 Factors  | Cloud Hosting | Managed Hosting
