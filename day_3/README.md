@@ -52,28 +52,53 @@ humair@ems:~$ chgrp some_file friends
 ```console
 humair@ems:~$ setfacl -m u:alice:r-- ./some_file
 ```
+For some reason the bits were'nt working here.
+### /bin/false vs /usr/bin/false
+
+The main diffrence that i found was that `bin/false` is just a binary that dosen't return anything & restricts login while `/nologin` exits gracefully with a message.
+
 ### Changing The Shell 
 
 Since I had already used to the `-s` flag while creating the user. I edited the etc/passwd file directly.
 
 
 ### Restricting Sudo Access
-Since I had already used to the `-s` flag while creating the user. I edited the etc/passwd file directly.
+Edited the sudoers file 
 ```console
-humair@ems:~$ setfacl -m u:alice:r-- ./some_file
+alice ALL=(root) /sbin/reboot
 ```
-For some reason the bits were'nt working here.
+### Deleting a User
+
+```console
+humair@ems:~$ deluser alice
+```
 
 ![group created](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
 ![change group ownership](https://i.ibb.co/qCrb5Pk/Screenshot-from-2020-02-12-05-20-44.png)
 
-### /bin/false vs /usr/bin/false
+### Generating public/private keys using gpg.
 
-The main diffrence that i found was that `bin/false` is just a binary that dosen't return anything & restricts login while `/nologin` exits gracefully with a message.
+```console
+humair@ems:~$ gpg --full-gen-key
+```
+### Encrypting files using gpg
+```console
+humair@ems:~$ gpg -c ./mangpg
+```
+### Generating public/private ssh key pairs.
+```console
+humair@ems:~$ gpg -c ./mangpg
+```
+### Configuring SSH Server For Remote Access.
+```console
+humair@ems:~$ ssh localhost
+```
+The command for connecting to the remote & this server was also fairly the same. However do we need to portforward in order for it to work on different network machines?
+### Configuring telnet for Remote Access.
 
-
-### Cloud Vs Shared Hosting
-
+```console
+humair@ems:~$ telnet
+```
 
 ![Cloud vs Shared Hosting](https://www.hostingadvice.com/wp-content/uploads/2017/11/server-comparison.jpg)
 
