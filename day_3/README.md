@@ -24,9 +24,9 @@ humair@ems:~$ sudo useradd -m -d /opt/joe joe
 humair@ems:~$ sudo useradd -m -d /opt/alice -s /bin/sh joe
 ```
 
--m : The -m tag specifies the creation of a home directory if it dosen't exist.
--d : Specifies the login directory by appending the Base directory with the user's name 
--s : Can be used to change the default login shell.
+* -m : The -m tag specifies the creation of a home directory if it dosen't exist.
+* -d : Specifies the login directory by appending the Base directory with the user's name 
+* -s : Can be used to change the default login shell.
 
 ![users created](https://i.ibb.co/gVYq3TB/1.png)
 ![check users](https://i.ibb.co/R93nVpv/check-users.png)
