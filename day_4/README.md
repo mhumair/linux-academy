@@ -10,7 +10,7 @@
 
   
 
-### Network Interfaces 
+## Network Interfaces 
 
 #### Display List Of Networking Interfaces
 The `netstat` utility can be used with `-i` flag to display all the network interfaces as follows : 
@@ -30,79 +30,43 @@ humair@ems:~$  netstat -r |gawk '{print $1 " | " $8}' | column -t'
 ![users created](https://i.ibb.co/gVYq3TB/1.png)
 ![check users](https://i.ibb.co/R93nVpv/check-users.png)
 
+## Processes
 
-### Creating a File
+### `ps augx` vs `ps ef -f`
+* ps augx : prints all the processes using the BSD format.
+* ps -ef -f : prints all the processes using the POSIX standard.
 
-```console
-humair@ems:~$ touch some_file
-```
+### Process Id's;
 
-
-
-### Changing Group OwnerShip
-```console
-humair@ems:~$ chgrp some_file friends
-```
-### Changing Accessiblity 
-```console
-humair@ems:~$ setfacl -m u:alice:r-- ./some_file
-```
-For some reason the bits were'nt working here.
-![group created](https://i.ibb.co/9r8jXJg/create-Grou.png)
-![change group ownership](https://i.ibb.co/Yyrw7kh/2.png)
-![change accessibility](https://i.ibb.co/8mcBzpc/acl.png)
-
-
-
-### /bin/false vs /usr/bin/false
-
-The main diffrence that i found was that `bin/false` is just a binary that dosen't return anything & restricts login while `/nologin` exits gracefully with a message.
-
-### Changing The Shell 
-
-Since I had already used to the `-s` flag while creating the user. I edited the etc/passwd file directly.
-
-![no login shells](https://i.ibb.co/Nx6MgKr/nolgin.png)
-
-### Restricting Sudo Access
-Edited the sudoers file 
-```console
-alice ALL=(root) /sbin/reboot
-```
-### Deleting a User
+Since I had multiple tabs & windows open, there were several process id's for chrome because each tab exists as a seperate process. Parent id for chrome : 2815
 
 ```console
-humair@ems:~$ deluser alice
+humair@ems:~$ pstree -p -T | grep chrome
 ```
-
-### Generating public/private keys using gpg.
-
+For slack the parent id was : 7167
 ```console
-humair@ems:~$ gpg --full-gen-key
+humair@ems:~$ pstree -p -T | grep slack
 ```
-![generate key gpg](https://i.ibb.co/84hQ4Wr/gpg-key-gen.png)
+* -p : prints the process ids along with the tree
+* -T : hides threads.
 
-### Encrypting files using gpg
-```console
-humair@ems:~$ gpg -c ./mangpg
+### Using Signals to Kill/Suspend
+
+* `Ctrl + C` is used to kill a process with signal SIGINT , in other words it is a polite kill . 
+* `Ctrl + Z` is used to suspend a process by sending it the signal SIGTSTP , which is like a sleep signal, that can be undone and the process can be resumed again.
+
+### Zombie process
+
+Whenever a process(parent) forks itself to create another process(child), it has to wait for the child to finish inorder to clear up resources like the child's pid upon exit. If the parent exits first the child is left an orphan & no one to clear up it's resources upon exit. This results the child process to become a zombie processe. Zombie processes are those processes who have exited but their temporary resources such as theire pid's have'nt been cleaned up by the OS. This results in them being shown in the process table with a defunct tag.
+
+### Killing a zombie process
+ 
+ ```console
+humair@ems:~$ ps aux | grep defunct | awk '{print $2}'
 ```
-![generate key gpg](https://i.ibb.co/84hQ4Wr/gpg-key-gen.png)
-### Generating public/private ssh key pairs.
-```console
-humair@ems:~$ gpg -c ./mangpg
-```
-### Configuring SSH Server For Remote Access.
-```console
-humair@ems:~$ ssh localhost
-```
+### fg | bg Signals
 
-The command for connecting to the remote & this server was also fairly the same. However do we need to portforward in order for it to work on different network machines?
+* `SIGCONT`: Backgrounding a process is accomplished by sending SIGCONT but not waiting for it to finish. In this case, both the shell and the child process can interact with stdout/stderr,
 
-![localhost ssh](https://i.ibb.co/L1TVxnS/localhost-ssh.png)
+* `SIGTSTP`: Suspending a command (CTRL-Z) works by sending a SIGTSTP to the child process. The shell is then free to interact with the user via stdin/stdout.
 
-### Configuring telnet for Remote Access.
-
-```console
-humair@ems:~$ telnet
-```
-![localhost telnet](https://i.ibb.co/9GzWvVz/telnet.png)
