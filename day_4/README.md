@@ -27,9 +27,6 @@ humair@ems:~$  netstat -r |gawk '{print $1 " | " $8}' | column -t'
 * gawk : Awk is mostly used for pattern scanning and processing.
 * column : Process output into tables.
 
-![users created](https://i.ibb.co/gVYq3TB/1.png)
-![check users](https://i.ibb.co/R93nVpv/check-users.png)
-
 ## Processes
 
 ### `ps augx` vs `ps ef -f`
