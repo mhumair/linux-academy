@@ -60,7 +60,14 @@ humair@ems:~$ pstree -p -T | grep slack
 
 ### Zombie process
 
-Whenever a process(parent) forks itself to create another process(child), it has to wait for the child to finish inorder to clear up resources like the child's pid upon exit. If the parent exits first the child is left an orphan & no one to clear up it's resources upon exit. This results the child process to become a zombie processe. Zombie processes are those processes who have exited but their temporary resources such as theire pid's have'nt been cleaned up by the OS. This results in them being shown in the process table with a defunct tag.
+Whenever a process(parent) forks itself to create another process(child) : 
+* it has to wait for the child to finish inorder to clear up resources like the child's pid upon exit. 
+
+* If the parent exits first the child is left an orphan & no one to clear up it's resources upon exit. 
+
+* This results the child process to become a zombie processe. Zombie processes are those processes who have exited but their temporary resources such as theire pid's have'nt been cleaned up by the OS.
+
+* This results in them being shown in the process table with a defunct tag.
 
 ### Killing a zombie process
  
@@ -130,7 +137,7 @@ humair@ems:~$ gpg --armor --export <id>
 ### Encrypting file
  
  ```console
-humair@ems:~$ gpg gpg -e -r <public_key> <file>
+humair@ems:~$ gpg -e -r <public_key> <file>
 ```
 
 ### Decrypting file
@@ -148,6 +155,7 @@ humair@ems:~$ gpg --sign <file>
  ```console
 humair@ems:~$ gpg --verify <file
 ```
+Output if signing is altered :
 ```
 gpg: [don't know]: invalid packet (ctb=5c)
 gpg: no signature found
