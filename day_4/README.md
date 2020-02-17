@@ -1,47 +1,44 @@
-# Managing Users & Remote Desktops Connections
+# Linux Networking Fundamentals
 
 ## Topics :
-* Creating Users
-* Managing Users in Groups
-* Restricting File Access
-* /bin/false vs /usr/bin/false
-* Restricting sudo access
-* Deleting a User
-* Exploring GnuPg
-* Generating public/private ssh key pairs.
-* Configuring SSH Server For Remote Access.
-* Configuring telnet for Remote Access.
+* Network Interfaces
+* Processes
+* Signals
+* Configuring ssh
+* TCP vs UDP
+* Transferring Encrypted/Signed Files
 
   
 
-## Creating Users 
+### Network Interfaces 
 
+#### Display List Of Networking Interfaces
+The `netstat` utility can be used with `-i` flag to display all the network interfaces as follows : 
 ```console
-humair@ems:~$ sudo useradd -m -d /opt/joe joe
+humair@ems:~$  netstat -i
 ```
+* -i : Displays all the interfaces in a table format.
 
+### With Ip & Name
 ```console
-humair@ems:~$ sudo useradd -m -d /opt/alice -s /bin/sh joe
-```
-
-* -m : The -m tag specifies the creation of a home directory if it dosen't exist.
-* -d : Specifies the login directory by appending the Base directory with the user's name 
-* -s : Can be used to change the default login shell.
+humair@ems:~$  netstat -r |gawk '{print $1 " | " $8}' | column -t'
+``````
+* -r : Display routing tables.
+* gawk : Awk is mostly used for pattern scanning and processing.
+* column : Process output into tables.
 
 ![users created](https://i.ibb.co/gVYq3TB/1.png)
 ![check users](https://i.ibb.co/R93nVpv/check-users.png)
 
-### Creating a Secondary Group
-```console
-humair@ems:~$ sudo groupadd friends; sudo gpasswd -M alice, jhon friends
-```
--M : Specifes that a list of users are to be added to the group.
 
 ### Creating a File
 
 ```console
 humair@ems:~$ touch some_file
 ```
+
+
+
 ### Changing Group OwnerShip
 ```console
 humair@ems:~$ chgrp some_file friends
