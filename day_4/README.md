@@ -19,6 +19,12 @@ humair@ems:~$  netstat -i
 ```
 * -i : Displays all the interfaces in a table format.
 
+`ss : `
+```console
+humair@ems:~$  ss -ltnp
+```
+where the `ltnp` flag shows all the info except foreign address as compare to `netstat`.
+
 ### With Ip & Name
 ```console
 humair@ems:~$  netstat -r |gawk '{print $1 " | " $8}' | column -t'
@@ -66,4 +72,87 @@ humair@ems:~$ ps aux | grep defunct | awk '{print $2}'
 * `SIGCONT`: Backgrounding a process is accomplished by sending SIGCONT but not waiting for it to finish. In this case, both the shell and the child process can interact with stdout/stderr,
 
 * `SIGTSTP`: Suspending a command (CTRL-Z) works by sending a SIGTSTP to the child process. The shell is then free to interact with the user via stdin/stdout.
+
+### Configuring SSH : 
+#### To listen on loopback-interface only : 
+
+Check which interface & port is sshd listening on : 
+ ```console
+humair@ems:~$ sudo netstat -ltnp | grep sshd
+```
+then edit the sudo vi /etc/ssh/sshd_config file 
+And change`#ListenAddress 0.0.0.0` to `#ListenAddress 127.0.0.1`
+
+To change port, in the same file change `#Port 22` to desired port.
+
+Then restart the service : 
+ ```console
+humair@ems:~$ sudo service sshd restart
+```
+### Creating Processes Using Fork
+
+A call to fork does the following things :
+
+* creates a new process by duplicating the process that calls it. 
+* the child process & the parent have the same address space untill the child manipulates the address space.
+* it is then upto the scheduling policy to schedule the child or parent.
+* a parent is responsible to clear resources of a child on exit.
+* the first processes that starts is `init`, it is also the father of all processes.
+* `init` is responsible for adopting all processes whose parent process has exited process.
+
+### TCP | UDP Services/Applications
+
+### Three Way HandShake
+
+To establish a connection, TCP uses a three-way handshake : 
+
+* `SYN` : Is short for synchronize & is sent by the client to start after the server has passively opened a port for connections.
+* `SYN-ACK` : In response the server replies with an acknowledgement.
+* `ACK` : Finally, the client also sends an acknowledgement back to the server.
+
+## Transferring Encrypted/Signed Files
+
+### Generating key
+ 
+ ```console
+humair@ems:~$ gpg --full-generate-key
+```
+
+### Exporting key
+ 
+ ```console
+humair@ems:~$ gpg --list-secret-keys --keyid-format LONG
+```
+
+ ```console
+humair@ems:~$ gpg --armor --export <id>
+```
+### Encrypting file
+ 
+ ```console
+humair@ems:~$ gpg gpg -e -r <public_key> <file>
+```
+
+### Decrypting file
+ 
+ ```console
+humair@ems:~$ gpg <file>
+```
+### Signing a file
+ 
+ ```console
+humair@ems:~$ gpg --sign <file>
+```
+### Verifying a signed a file
+ 
+ ```console
+humair@ems:~$ gpg --verify <file
+```
+```
+gpg: [don't know]: invalid packet (ctb=5c)
+gpg: no signature found
+gpg: the signature could not be verified.
+Please remember that the signature file (.sig or .asc)
+```
+
 
