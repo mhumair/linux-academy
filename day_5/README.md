@@ -1,16 +1,16 @@
 # Linux Networking Fundamentals
 
 ## Topics :
-* Network Interfaces
-* Processes
-* Signals
-* Configuring ssh
-* TCP vs UDP
-* Transferring Encrypted/Signed Files
+
+* Tranferring files : rsync | scp | ftp | sftp
+* Using `tcpdump`
+* Managing shell sessions using `tmux`
+* Tracking Process Signals using `strace`
+* Managing Package Repositories
 
   
 
-## Network Interfaces 
+## Tranferring files : 
 
 #### Display List Of Networking Interfaces
 The `netstat` utility can be used with `-i` flag to display all the network interfaces as follows : 
