@@ -70,9 +70,13 @@ Whenever a process(parent) forks itself to create another process(child) :
 * This results in them being shown in the process table with a defunct tag.
 
 ### Killing a zombie process
- 
+ Get zombie 
  ```console
 humair@ems:~$ ps aux | grep defunct | awk '{print $2}'
+```
+Kill a zombie 
+ ```console
+humair@ems:~$ kill -9 <pid>
 ```
 ### fg | bg Signals
 
