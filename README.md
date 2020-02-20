@@ -7,3 +7,11 @@ This repository aims to give an overview of Linux Academy Program. A six week lo
 * Day #02 : [History Of OpenSource & Linux.](https://mhumair.github.io/linux-academy/day_1/)
 
 * Day #03 : [Linux Overview.](https://mhumair.github.io/linux-academy/day_2/)
+
+* Day #04 : [Encryption](https://mhumair.github.io/linux-academy/day_3/)
+
+* Day #05 : [Linux Networking.](https://mhumair.github.io/linux-academy/day_4/)
+
+* Day #06 : [Basic Power Tools](https://mhumair.github.io/linux-academy/day_5/)
+
+* Day #07 : [Domain Name Servers](https://mhumair.github.io/linux-academy/day_6/)
