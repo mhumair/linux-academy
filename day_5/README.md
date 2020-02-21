@@ -3,16 +3,17 @@
 ## Topics :
 
 * Tranferring files : rsync | scp | ftp | sftp
-* Using `tcpdump`
-* Managing shell sessions using `tmux`
-* Tracking Process Signals using `strace`
-* Managing Package Repositories
+* Using tcp_wrappers
+* Download/Upload FTP VS SFTP : 
+* Tmux : 
+* Strace : 
+* Apt-Get Repositories : 
 
   
 
-## Tranferring files : 
+## Tranferring Files : 
 
-#### Display List Of Networking Interfaces
+### Rsync
 The `netstat` utility can be used with `-i` flag to display all the network interfaces as follows : 
 ```console
 humair@ems:~$  netstat -i
