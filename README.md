@@ -15,3 +15,5 @@ This repository aims to give an overview of Linux Academy Program. A six week lo
 * Day #06 : [Basic Power Tools](https://mhumair.github.io/linux-academy/day_5/)
 
 * Day #07 : [Domain Name Servers](https://mhumair.github.io/linux-academy/day_6/)
+
+* Day #08 : [HTTP : Deep Dive](https://mhumair.github.io/linux-academy/day_7/)
