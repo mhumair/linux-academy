@@ -1,25 +1,22 @@
-# Linux Networking Fundamentals
+# HTTP
 
 ## Topics :
 
-* Tranferring files : rsync | scp | ftp | sftp
-* /etc/hosts.allow
-* reload config
-* /etc/services
-* /etc/apt/sources,list,d/ ls -l
-* mirrors
-* apt-get
-* apt-cache
-* dpkg -i
-* screen
-* tmux
-* strace
-* tcpdump host addr port
-* ping icmp
-* traceroute
-* service sshd  status
-* sudo systemctl status ssh
-* init.d
+* find /dir -iname sd
+* readlink | whereas | which
+* ls attr chattr
+* salts are stored in /etc/shadow
+* crontab /var/spool/cron
+* nginx -t
+* http protocol 
+* http-request : method headers
+* response status code
+* relative abs url
+* check 
+* pixel tracking
+* ssl vs tls
+* http2 multiplexing 
+
   
 
 
