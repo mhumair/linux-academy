@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+###echo "Hello->" $#
+
+if [ $# -lt 1 ]
+then
+	printf "usage\n"
+	exit 1
+else
+	argv=("$@")
+
+	ssh ubuntu@138.68.21.0
+fi
+exit 0
+
